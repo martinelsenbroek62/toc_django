@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{%load static%}
+{% block content %}
+<main class="toc-main-wrapper ">
+    <div class="toc-container align-verticaly-middle">
+        <form class="toc-form-wrapper" action="{% url 'showfile' %}" method="post" enctype="multipart/form-data" autocomplete="off">
+            <div class="toc-form-container">
+                <div class="toc-tc-form-logo"><img src="{%static 'images/tc-logo.png' %}" alt=""></div>
+            </div>
+            <div class="toc-form-fields-wrapper">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input id="inputText" type="text" name='textcontent' class="form-control m-r-15" placeholder="Paste Article Here">
+                    <div class="input-group-append">
+                        <input id = "submit" type="submit" class="btn btn-secondary" value="Create TOC">
+                    </div>
+                </div>
+                <div class="text-center">OR</div>
+                <div class="input-group">
+                    <div class="form-check form-control no-border m-r-15">
+                        <input type="checkbox" class="form-check-input" name= "checkbox" id="checkbox">
+                        <label class="form-check-label" for="checkbox">Upload Text File</label>
+                    </div>
+                   
+                    <span class="align-middle" id="spnFilePath"></span>
+                    <button type="button" id="btnFileUpload" class="btn btn-secondary" style="display: none;">Choose Files</button>
+                    <input type="file" name="file" id="FileUpload" style="display: none;">
+                </div> 
+            </div>
+        </form>
+    </div>
+</main>
+<footer class="align-middle">
+    <div class="toc-container">
+        <p>©2020 Touchcast, LLC. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %}
+

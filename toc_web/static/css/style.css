@@ -1,0 +1,185 @@
+body{
+	padding: 0;
+	margin:0;
+	font-family: 'Roboto', sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+img{
+	max-width: 100%;
+}
+input, a, button{
+	outline: none;
+}
+.m-r-15{
+	margin-right: 15px;
+}
+.m-l-15{
+	margin-left: 15px;
+}
+.align-middle{
+	display:flex;
+	align-items: center;
+}
+.align-middle-space-btw{
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.align-verticaly-middle{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.toc-container{
+	max-width: 1140px;
+    margin: auto;
+	width: 100%;
+	padding: 0 20px;
+}
+.fixed-top {
+  background: #fff;
+}
+header, nav{
+	height: 60px;
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+header .toc-version-title, nav .toc-version-title{
+	font-size: 20px;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 0.2px;
+	color: #000000;
+}
+
+header a.toc-logo img, nav a.toc-logo img{
+	max-width: 100%;
+	width: 200px;
+}
+.sidebar-sticky.pt-3 {
+  background: #f8f9fa;
+  box-shadow: 1px 2px black;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+main.toc-main-wrapper{
+	height: calc( 100vh - 120px);
+}
+main.toc-main-wrapper .toc-container{
+	height: 100%;
+}
+.toc-form-wrapper .toc-form-container .toc-tc-form-logo{
+	margin-bottom: 60px;
+}
+.input-group{
+	position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: center;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.no-border{
+border: none !important;
+}
+.input-group-append, .input-group-prepend{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.input-group-append {
+    margin-left: -1px;
+}
+/* .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group>.input-group-append>.btn{
+	border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+} */
+.btn:not(:disabled):not(.disabled){
+	cursor: pointer;
+}
+.input-group-append .btn, .input-group-prepend .btn{
+	position: relative;
+    z-index: 2;
+}
+.input-group>.form-control{
+	position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+.btn {
+	min-width: 120px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.justify-right{
+	justify-content: flex-end;
+}
+
+
+#spnFilePath{
+    margin-right: 10px;
+}
+/* Page content. The value of the margin-left property should match the value of the sidenav's width property */
+div.content {
+  margin-left: 300px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+#file-content{
+    padding-bottom: 200px !important;
+}
+#file-content h1{
+    padding-top: 20px;
+}
+footer{
+	background-color: #f9f9f9;
+	height: 60px;
+}
+footer p{
+	color: #808080;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0px;
+}
+
+
+@media (max-width: 420px) {
+	header a.toc-logo img{
+		width: 130px;
+	}
+}

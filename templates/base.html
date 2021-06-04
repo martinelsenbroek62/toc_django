@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="generator" content="Jekyll v4.1.1">
+	<title>Show TOC</title>
+	<link href="{%static 'css/style.css' %}" rel="stylesheet">
+	<link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{%static 'css/dashboard.css' %}" rel="stylesheet"> </head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-light flex-md-nowrap p-0 shadow">
+    <div class="toc-container align-middle-space-btw">
+        <a class="toc-logo" href="javascript:void(0);"><img src="{%static 'images/tc-logo.png' %}" alt=""></a>
+        <div class="toc-version-title">TOC POC V1.0</div>
+    </div>
+</nav>
+<section>
+    {% block content %}{% endblock %}
+</section>
+<script type="text/javascript" src="{%static 'js/jquery-1.8.3.min.js' %}" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script type="text/javascript">
+    $("#submit").click(function(){
+        if ($("#inputText").val() == '' && $("#spnFilePath").html() == ''){
+            alert("Choose a file or Enter text")
+            event.preventDefault();
+        }
+    });
+    $("#btnFileUpload").click(function () {
+        $("#FileUpload").click();
+    });
+    $("#FileUpload").change(function () {
+        var fileName = $(this).val().split('\\')[$(this).val().split('\\').length - 1];
+        $("#spnFilePath").html(fileName);
+    });
+    $('#checkbox').change(function() {
+        if(this.checked) {
+            $("#inputText").val('');
+            $("#inputText").prop('disabled', true);
+            $('#btnFileUpload').show();
+        }
+        else{
+            $("#spnFilePath").html('');
+            $("#inputText").prop('disabled', false);
+            $('#btnFileUpload').hide();
+        }
+        
+            }); 
+        (function() {
+        'use strict'
+        feather.replace()
+    })()
+   
+    $('a[href^="#"]').live('click', function(event) {
+        event.preventDefault();
+        var target_offset = $(this.hash).offset() ? $(this.hash).offset().top : 0;
+        //change this number to create the additional offset  
+        var customoffset = 60;
+        $('html, body').animate({
+            scrollTop: target_offset - customoffset
+        }, 500);
+    });
+
+    function scrollToAnchor(aid){
+        console.log("scroll")
+        var aTag = $("a[name='"+ aid +"']");
+        $('html,body').animate({scrollTop: aTag.offset().top},'fast');
+    }
+
+    $(".link").click(function() {
+        anchor_name = $(this).attr('name')
+        scrollToAnchor(anchor_name);
+    });
+
+
+</script>
+</body>
+</html>
